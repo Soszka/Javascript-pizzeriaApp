@@ -19,7 +19,6 @@ class Booking {
 
     const startDateParam = settings.db.dateStartParamKey + '=' + utils.dateToStr(thisBooking.datePicker.minDate);
     const endDateParam = settings.db.dateEndParamKey + '=' + utils.dateToStr(thisBooking.datePicker.maxDate);
-
     const params =  {
       booking: [
         startDateParam,
@@ -35,7 +34,6 @@ class Booking {
         endDateParam,
       ],
     };
-
     const urls = {
       bookings:       settings.db.url + '/' + settings.db.bookings  + '?' + params.booking.join('&'),
       eventsCurrent:  settings.db.url + '/' + settings.db.events    + '?' + params.eventsCurrent.join('&'),

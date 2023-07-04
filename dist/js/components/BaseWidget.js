@@ -1,10 +1,9 @@
 class BaseWidget {
   constructor(wrapperElement, initialValue) {
     const thisWidget = this;
-
+    
     thisWidget.dom = {};
     thisWidget.dom.wrapper = wrapperElement;
-
     thisWidget.correctValue = initialValue;
   }
 
@@ -18,12 +17,10 @@ class BaseWidget {
     const thisWidget = this;
 
     const newValue = thisWidget.parseValue(value);
-
     if(thisWidget.correctValue !== newValue && thisWidget.isValid(newValue)){
       thisWidget.correctValue = newValue;
       thisWidget.announce();
     }
-
     thisWidget.renderValue();
   }
 

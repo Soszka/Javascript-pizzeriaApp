@@ -14,15 +14,13 @@ const app = {
 
     const idFromHash = window.location.hash.replace('#/', '');
     let pageMatchingHash = thisApp.pages[0].id;
-    for( let page of thisApp.pages){
+    for(let page of thisApp.pages){
       if(page.id == idFromHash){
         pageMatchingHash = page.id;
         break;
       }
     }
-
     thisApp.activatePage(pageMatchingHash);
-
     for(let link of thisApp.navLinks){
       link.addEventListener('click', function(event){
         const clickedElement = this;
@@ -53,7 +51,6 @@ const app = {
 
   initMenu: function () {
     const thisApp = this;
-
     for (let productData in thisApp.data.products) {
       new Product(thisApp.data.products[productData].id, thisApp.data.products[productData]);
     }

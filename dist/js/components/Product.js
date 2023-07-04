@@ -88,7 +88,6 @@ class Product {
         } else if (option.default) {
           price -= option.price;
         }
-
         const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
         if (optionImage) {
           if (optionSelected) {
@@ -164,3 +163,13 @@ class Product {
 }
 
 export default Product;
+
+const urlWithBadDomain = 'https://not-really-a-website.nope/api/users';
+fetch(urlWithBadDomain)
+  .then(rawResponse => rawResponse.json())
+  .then(parsedResponse => {
+    console.log(parsedResponse);
+  })
+  .catch((error) => {
+    console.warn('CONNECTION ERROR', error);
+  });
